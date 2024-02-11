@@ -1,0 +1,15 @@
+#!/bin/bash
+
+swaylock -L -e -S \
+    --datestr '%A, %d %b' \
+    --font 'JetBrains Mono' \
+    --font-size 20 \
+    --indicator-radius 80 \
+    --indicator-thickness 8 \
+    --effect-blur 1x0 \
+    --effect-vignette 0.6:0.6 \
+    --text-color c0caf5 \
+    --key-hl-color 7da6ff \
+    --line-ver-color 1a1b26 \
+
+    
