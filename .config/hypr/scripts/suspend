@@ -3,6 +3,6 @@
 lock="~/.config/hypr/scripts/lockscreen"
 swayidle -w \
     timeout 120 $lock \
-    timeout 1800 /'systemctl suspend' \
+    timeout 1800 'systemctl suspend' \
     before-sleep $lock
     
