@@ -10,6 +10,7 @@ declare -a dotfiles=(
     ".config/cava"
     ".config/gtk-3.0"
     ".config/waybar"
+    ".config/swaylock"
 )
 
 dotfilesPath="$HOME/Dev/dotfiles"
