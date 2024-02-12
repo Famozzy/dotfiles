@@ -1,15 +1,36 @@
 #!/bin/bash
 
 swaylock -L -e -S \
+    --clock \
+    --indicator \
     --datestr '%A, %d %b' \
     --font 'JetBrains Mono' \
     --font-size 20 \
     --indicator-radius 80 \
-    --indicator-thickness 8 \
-    --effect-blur 1x0 \
+    --indicator-thickness 7 \
+    --effect-blur 7x2 \
     --effect-vignette 0.6:0.6 \
-    --text-color c0caf5 \
+    --text-color CDD6F4 \
+    --text-clear-color CDD6F4 \
+    --text-ver-color CDD6F4 \
+    --text-wrong-color CDD6F4 \
     --key-hl-color 7da6ff \
-    --line-ver-color 1a1b26 \
+    --bs-hl-color acb0d0 \
+    --ring-color 32344a \
+    --caps-lock-bs-hl-color 0db9d7 \
+    --ring-ver-color 9ece6a \
+    --ring-wrong-color f7768e \
+    --ring-clear-color e0af68 \
+    --line-color 00000000 \
+    --line-clear-color 00000000 \
+    --line-ver-color 00000000 \
+    --line-wrong-color 00000000 \
+    --separator-color 00000000 \
+    --inside-color 1a1b26cf \
+    --inside-clear-color 1a1b26cf \
+    --inside-ver-color 1a1b26cf \
+    --inside-wrong-color 1a1b26cf 
+
+
 
     
