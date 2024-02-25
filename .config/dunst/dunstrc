@@ -27,7 +27,7 @@
     width = 300
 
     # The maximum height of a single notification, excluding the frame.
-    height = 400
+    height = 200
 
     # Position the notification in the top right corner
     origin = bottom-right
@@ -73,7 +73,7 @@
     # The transparency of the window.  Range: [0; 100].
     # This option will only work if a compositing window manager is
     # present (e.g. xcompmgr, compiz, etc.). (X11 only)
-    # transparency = 0
+    # transparency = 50
 
     # Draw a line of "separator_height" pixel height between two
     # notifications.
@@ -239,7 +239,7 @@
     # dmenu = /usr/bin/dmenu -p dunst:
 
     # Browser for opening urls in context menu.
-    browser = firefox-developer-edition
+    browser = firefoxdeveloperedition
 
     # Always run rule-defined scripts, even if the notification is suppressed
     always_run_script = true
