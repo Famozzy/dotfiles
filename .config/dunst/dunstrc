@@ -30,10 +30,10 @@
     height = 200
 
     # Position the notification in the top right corner
-    origin = bottom-right
+    origin = top-right
 
     # Offset from the origin
-    offset = 10x50
+    offset = 15x20
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
@@ -101,7 +101,7 @@
     # If value is greater than 0, separator_height will be ignored and a border
     # of size frame_width will be drawn around each notification instead.
     # Click events on gaps do not currently propagate to applications below.
-    gap_size = 4
+    gap_size = 6
 
     # Define a color for the separator.
     # possible values are:
@@ -109,7 +109,7 @@
     #  * foreground: use the same color as the foreground;
     #  * frame: use the same color as the frame;
     #  * anything else will be interpreted as a X color.
-    separator_color = #ffffff
+    # separator_color = #ffffff
 
     # Sort type.
     # possible values are:
@@ -255,7 +255,7 @@
     # corners.
     # The radius will be automatically lowered if it exceeds half of the
     # notification height to avoid clipping text and/or icons.
-    corner_radius = 4
+    corner_radius = 6
 
     # Ignore the dbus closeNotification message.
     # Useful to enforce the timeout set by dunst configuration. Without this
@@ -318,11 +318,13 @@
 [urgency_low]
     background = "#16161e"
     foreground = "#c0caf5"
+    # frame_color = "#1a1b26"
     #default_icon = /path/to/icon
 
 [urgency_normal]
     background = "#1a1b26"
     foreground = "#c0caf5"
+    # frame_color = "#1a1b26"
     #default_icon = /path/to/icon
 
 [urgency_critical]

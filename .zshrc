@@ -2,7 +2,7 @@ export ZSH="$HOME/.oh-my-zsh"
 
 export XDG_CONFIG_HOME="$HOME/.config"
 
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
 export PATH="$PATH:$HOME/.spicetify"
 
 export GTK_IM_MODULE="fcitx"
@@ -90,7 +90,8 @@ alias pacman="sudo pacman"
 alias r="ranger"
 alias py="python3"
 alias lf="lf-ubz"
-alias exitvm="hyprctl dispatch exit"
+alias exitwm="hyprctl dispatch exit"
+alias mkdir="mkdir -p"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 

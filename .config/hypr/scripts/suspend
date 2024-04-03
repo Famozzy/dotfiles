@@ -1,6 +1,0 @@
-#!/bin/bash
-
-swayidle -w \
-    timeout 300 'swaylock' \
-    timeout 2700 'systemctl suspend'
-    

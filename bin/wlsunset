@@ -1,0 +1,6 @@
+#!/bin/bash
+
+data=$(curl -s http://ip-api.com/json/)
+lat=$(echo $data | jq '.lat')
+lon=$(echo $data | jq '.lon')
+wlsunset -l $lat -L $lon
