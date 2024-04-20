@@ -79,6 +79,7 @@ ZSH_THEME="avit"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	zsh-autosuggestions
+  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -87,8 +88,8 @@ source $ZSH/oh-my-zsh.sh
 
 alias cl="clear"
 alias pacman="sudo pacman"
-alias r="ranger"
 alias py="python3"
+alias vim="nvim"
 alias lf="lf-ubz"
 alias exitwm="hyprctl dispatch exit"
 alias mkdir="mkdir -p"

@@ -133,7 +133,7 @@ channels = stereo
 # if supported, ncurses mode will be forced on if user defined colors are used.
 # default is to keep current terminal color
 ; background = default
-foreground = '#7aa2f7'
+; foreground = '#7aa2f7'
 
 # SDL only support hex code colors, these are the default:
 ; background = '#111111'
@@ -145,14 +145,16 @@ foreground = '#7aa2f7'
 # You can define as many as 8 different colors. They range from bottom to top of screen
 # gradient = 1
 
-gradient_color_1 = '#94e2d5'
-gradient_color_2 = '#89dceb'
-gradient_color_3 = '#74c7ec'
-gradient_color_4 = '#89b4fa'
-gradient_color_5 = '#cba6f7'
-gradient_color_6 = '#f5c2e7'
-gradient_color_7 = '#eba0ac'
-gradient_color_8 = '#f38ba8'
+gradient = 1
+
+gradient_color_1 = '#7aa2f7'
+gradient_color_2 = '#87abf7'
+gradient_color_3 = '#94b4f8'
+gradient_color_4 = '#a1bdf9'
+gradient_color_5 = '#afc7fa'
+gradient_color_6 = '#bcd0fb'
+gradient_color_7 = '#c9d9fb'
+gradient_color_8 = '#d7e3fc'
 
 gradient = 1
 # gradient_color_1 = '#31748f'
