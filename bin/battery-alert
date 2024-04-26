@@ -6,13 +6,12 @@ check_battery() {
 
 	if [ $status == "Charging" ]; then
 		dunstctl close
-		exit 0
+		return 0
 	fi
 
 	if [ $status == "Discharging" ] && [ $percentage -lt 15 ]; then
 		notify-send -u critical "Battery low" "Plug in your charger" -i $HOME/.config/dunst/icons/battery-warning-vertical.svg
 	fi
-
 }
 
 while true; do

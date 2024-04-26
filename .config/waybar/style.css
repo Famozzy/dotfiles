@@ -1,4 +1,4 @@
-@define-color bg-color  rgba(26, 27, 38, 0.8); /* #1a1b26 */
+@define-color bg-color  rgba(26, 27, 38, 0.85); /* #1a1b26 */
 @define-color red-1     #f7768e;
 @define-color red-2     #db4b4b;
 @define-color orange    #ff9e64;
@@ -6,6 +6,7 @@
 @define-color cyan      #7dcfff;
 @define-color white     #c0caf5;
 @define-color gray      #565f89;
+@define-color purple    #9d7cd8;
 
 * {
   font-family: "Jetbrains mono", monospace;
@@ -143,12 +144,13 @@ button:hover {
 }
 
 #clock {
+  padding: 0 0.5rem;
   color: @cyan;
 }
 
 #custom-logo {
   font-size: 13px;
-  color: @cyan;
+  color: @purple;
 }
 
 #custom-powermenu {

@@ -4,6 +4,7 @@
   "editor.fontLigatures": true,
   "editor.minimap.enabled": false,
   "editor.scrollbar.verticalScrollbarSize": 12,
+  "editor.fontSize": 13,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "editor.tabSize": 2,
@@ -12,7 +13,6 @@
   "security.workspace.trust.startupPrompt": "never",
   "security.workspace.trust.enabled": false,
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.colorTheme": "One Dark Pro Darker",
   "github.copilot.enable": {
     "*": true,
     "plaintext": false,
@@ -26,5 +26,8 @@
   "prettier.trailingComma": "none",
   "prettier.singleQuote": true,
   "prettier.printWidth": 120,
-  "telemetry.telemetryLevel": "off"
+  "telemetry.telemetryLevel": "off",
+  "workbench.colorTheme": "Tokyo Night",
+  "workbench.startupEditor": "none",
+  "explorer.confirmDelete": false
 }

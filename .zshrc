@@ -92,7 +92,7 @@ alias py="python3"
 alias vim="nvim"
 alias lf="lf-ubz"
 alias exitwm="hyprctl dispatch exit"
-alias mkdir="mkdir -p"
+alias sstat="systemctl status"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -118,10 +118,7 @@ alias mkdir="mkdir -p"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# pfetch (pretty fetch) configuration
-export PF_INFO="ascii title os kernel pkgs shell uptime memory cpu gpu"
-export PF_ASCII="arch"
-pfetch
+uwufetch
 
 # nvm (node version manager)
 export NVM_DIR="$HOME/.nvm"

@@ -11,7 +11,7 @@
     "cpu",
     "memory",
     "idle_inhibitor",
-    "custom/player",
+    "hyprland/window",
   ],
   "modules-center": ["hyprland/workspaces"],
   "modules-right": [
@@ -45,8 +45,7 @@
   },
   "hyprland/window": {
     "format": "{}",
-    "max-length": 32,
-    "tooltip": true,
+    "max-length": 36,
   },
   // "mpd": {
   //     "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
@@ -127,7 +126,7 @@
     "format-wifi": "󰖩 {essid}",
     "format-ethernet": " {ipaddr}/{cidr}",
     "format-linked": " {ifname} (No IP)",
-    "tooltip-format": "{ifname} via {gwaddr}",
+    "tooltip-format": "{bandwidthTotalBytes}",
     "format-disconnected": "󰖪 disconnected",
   },
   "pulseaudio": {
@@ -158,7 +157,7 @@
     "exec": "notify-send -u critical 'Battery low' 'Plug in your charger'",
   },
   "custom/logo": {
-    "format": "",
+    "format": "",
     "tooltip": false,
   },
   "custom/player": {

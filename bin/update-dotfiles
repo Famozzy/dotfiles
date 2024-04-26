@@ -18,8 +18,6 @@ declare -a dotfiles=(
 
 dotfilesPath="$HOME/Dev/dotfiles"
 
-cp -f "$HOME/Pictures/bg/wall.png" "$dotfilesPath/wallpaper"
-
 for f in "${dotfiles[@]}"; do
 	rm -rf "${dotfilesPath}/${f}"
 	mkdir -p "$(dirname "${dotfilesPath}/${f}")" && cp -r "$HOME/${f}" "${dotfilesPath}/${f}"
