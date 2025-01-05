@@ -1,14 +1,27 @@
 {
-  "layer": "top",
+  "layer": "/top",
   "position": "top",
   "height": 0,
   "margin-left": 8,
   "margin-right": 8,
   "margin-top": 6,
-  "spacing": 2,
-  "modules-left": ["cpu", "memory", "temperature", "idle_inhibitor", "hyprland/window"],
+  // "spacing": 2,
+  "modules-left": [
+    "custom/logo",
+    "cpu",
+    "memory",
+    "idle_inhibitor",
+    "hyprland/window",
+  ],
   "modules-center": ["hyprland/workspaces"],
-  "modules-right": ["tray", "network", "pulseaudio", "backlight", "battery", "clock"],
+  "modules-right": [
+    "tray",
+    "network",
+    "pulseaudio",
+    "backlight",
+    "battery",
+    "clock",
+  ],
   "hyprland/workspaces": {
     "disable-scroll": true,
     "all-outputs": true,
@@ -25,13 +38,11 @@
       "8": "八",
       "9": "九",
       "10": "十",
-      "special": "s"
-    }
+    },
   },
   "hyprland/window": {
     "format": "{}",
-    "max-length": 26,
-    "tooltip": true
+    "max-length": 36,
   },
   // "mpd": {
   //     "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
@@ -63,55 +74,59 @@
     "format": "{icon}",
     "format-icons": {
       "activated": "󰅶",
-      "deactivated": "󰾪"
-    }
+      "deactivated": "󰾪",
+    },
   },
   "tray": {
-    "icon-size": 14,
-    "spacing": 8
+    "icon-size": 12,
+    "spacing": 4,
   },
   "clock": {
     "timezone": "Asia/Makassar",
-    "format": "{:%a %d %b %H:%M}"
+    "format": "{:%a %d %b %H:%M}",
   },
   "cpu": {
     "format": " {usage}%",
-    "tooltip": " {usage}%\n{usagePerCore}"
+    "interval": 10,
+    "tooltip": " {usagePerCore}",
   },
   "memory": {
-    "format": " {}%"
+    "format": " {used:0.1f}G",
+    "tooltip-format": "{used:0.1f}G/{total:0.1f}G",
+    "interval": 10,
   },
   "temperature": {
     "critical-threshold": 80,
     "format-critical": "{icon} {temperatureC}°C",
     "format": "{icon} {temperatureC}°C",
     "format-icons": ["", "", ""],
-    "tooltip": false
+    "tooltip": false,
   },
   "backlight": {
     "format": "{icon} {percent}%",
     "format-icons": ["󰃞", "󰃝", "󰃟", "󰃠"],
-    "tooltip": false
+    "tooltip": false,
   },
   "battery": {
-    "interval": 10,
+    "interval": 5,
     "states": {
       "good": 80,
       "warning": 30,
-      "critical": 15
+      "critical": 15,
     },
     "format": "{icon} {capacity}%",
-    "format-charging": "󰂄 {capacity}%",
-    "format-plugged": "󰂄 {capacity}%",
-    "format-icons": ["󰁻", "󰁽", "󰁿", "󰂁", "󰁹"],
-    "tooltip-format": "{time}"
+    "format-charging": "󱊥 {capacity}%",
+    "format-plugged": "󱊦 {capacity}%",
+    "format-icons": ["󱊡", "󱊢", "󱊣"],
+    "tooltip-format": "{time}",
   },
   "network": {
-    "format-wifi": " {essid}",
-    "format-ethernet": " {ipaddr}/{cidr}",
-    "tooltip-format": "{ifname} via {gwaddr}",
-    "format-linked": "{ifname} (No IP) ",
-    "format-disconnected": "󰖪 disconnected"
+    "format-wifi": "󰖩 Connected",
+    "format-ethernet": " Connected",
+    "format-linked": " Connected (No IP)",
+    "tooltip-format-wifi": "{essid} - {ipaddr}",
+    "tooltip-format-ethernet": "{ifname} - {ipaddr}",
+    "format-disconnected": "󰖪 Disconnected",
   },
   "pulseaudio": {
     // "scroll-step": 1, // %, can be a float
@@ -122,22 +137,27 @@
     "format-icons": {
       "headphone": "󰋋",
       "headset": "󰋋",
-      "default": ["󰖀", "󰕾"]
+      "default": ["󰕿", "󰖀", "󰕾"],
     },
-    "on-click": "$XDG_CONFIG_HOME/hypr/scripts/volmixer mute"
+    "on-click": "$HOME/bin/volume mute",
   },
-  "custom/spotify": {
+  //"custom/powermenu": {
+  //  "format": "󰤆",
+  //  "tooltip": false,
+  //  "on-click": "sleep 0.1 && $HOME/bin/powermenu",
+  //},
+  "custom/logo": {
+    "format": "",
+    "tooltip": false,
+  },
+  "custom/player": {
     "format": "{icon}{}",
     "escape": true,
     "return-type": "json",
-    "max-length": 24,
-    // "interval": 30,
-    "on-click": "playerctl -p spotify play-pause",
-    "on-click-right": "killall spotify",
-    "smooth-scrolling-threshold": 10, // This value was tested using a trackpad, it should be lowered if using a mouse.
-    "on-scroll-up": "playerctl -p spotify next",
-    "on-scroll-down": "playerctl -p spotify previous",
-    "exec": "$XDG_CONFIG_HOME/waybar/mediaplayer.py 2> /dev/null",
-    "exec-if": "pgrep spotify"
-  }
+    "max-length": 40,
+    //"interval": 30, // Remove this if your script is endless and write in loop
+    "on-click": "playerctl play-pause",
+    "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null",
+    "exec-if": "pgrep -x spotify",
+  },
 }

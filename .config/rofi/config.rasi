@@ -1,0 +1,215 @@
+/*****----- Configuration -----*****/
+configuration {
+	modi:                        "drun";
+  show-icons:                  true;
+  display-drun:                "";
+	drun-display-format:        " {name}";
+}
+
+/*****----- Global Properties -----*****/
+* {
+    font:                        "JetBrains Mono 11";
+    background:                  rgba(24,24,37,0.9);
+    background-alt:              #181825;
+    foreground:                  #cdd6f4;
+    selected:                    #11111b;
+    active:                      #89b4fa;
+    urgent:                      #11111b;
+}
+
+/*****----- Main Window -----*****/
+window {
+    /* properties for window widget */
+    transparency:                "real";
+    location:                    center;
+    padding:                     0;
+    anchor:                      center;
+    fullscreen:                  false;
+    width:                       448px;
+    x-offset:                    0px;
+    y-offset:                    0px;
+
+    /* properties for all widgets */
+    enabled:                     true;
+    border-radius:               8px;
+    border:                      none;
+    cursor:                      "default";
+    background-color:            @background;
+}
+
+/*****----- Main Box -----*****/
+mainbox {
+    enabled:                     true;
+    spacing:                     0px;
+    background-color:            transparent;
+    orientation:                 vertical;
+    children:                    [ "inputbar", "listbox" ];
+}
+
+listbox {
+    spacing:                     10px;
+    padding:                     12px;
+    background-color:            transparent;
+    orientation:                 vertical;
+    children:                    [ "listview" ];
+}
+
+/*****----- Inputbar -----*****/
+inputbar {
+    enabled:                     true;
+    spacing:                     4px;
+    padding:                     12px 12px 0px;
+    background-color:            transparent;
+    background-image:            url("~/.config/hypr/walls/wallhaven-dprj9m.jpg", width);
+    text-color:                  @foreground;
+    orientation:                 horizontal;
+    children:                    [ "textbox-prompt-colon", "entry"];
+    // children:                    ["entry", "dummy", "mode-switcher"];
+}
+
+textbox-prompt-colon {
+    enabled:                     false;
+    expand:                      false;
+    str:                         "src";
+    padding:                     12px;
+    border-radius:               100%;
+    background-color:            @background-alt;
+    text-color:                  inherit;
+}
+
+entry {
+    enabled:                     true;
+    expand:                      false;
+    width:                       424px;
+    padding:                     12px;
+    border-radius:               8px;
+    background-color:            @background-alt;
+    text-color:                  inherit;
+    cursor:                      text;
+    border:                      1px;
+    border-color:                #7aa2f7;
+    placeholder-color:           inherit;
+}
+
+dummy {
+    expand:                      true;
+    background-color:            transparent;
+}
+
+/*****----- Mode Switcher -----*****/
+mode-switcher {
+    enabled:                     true;
+    spacing:                     8px;
+    background-color:            transparent;
+    text-color:                  @foreground;
+    orientation:                 horizontal;
+}
+
+button {
+    padding:                     8px 5px 8px 8px;
+    border-radius:               100%;
+    background-color:            @background-alt;
+    text-color:                  inherit;
+    cursor:                      pointer;
+}
+button selected {
+    background-color:            @selected;
+    text-color:                  @foreground;
+}
+
+/*****----- Listview -----*****/
+listview {
+    border:                      none;
+    enabled:                     true;
+    columns:                     1;
+    lines:                       7;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    spacing:                     5px;
+    background-color:            transparent;
+    text-color:                  @foreground;
+    cursor:                      "default";
+}
+
+
+/*****----- Elements -----*****/
+element {
+    enabled:                     true;
+    spacing:                     0px;
+    padding:                     7px;
+    border-radius:               6px;
+    background-color:            transparent;
+    text-color:                  @foreground;
+    cursor:                      pointer;
+}
+
+element normal.normal {
+    background-color:            inherit;
+    text-color:                  inherit;
+}
+element normal.urgent {
+    background-color:            @urgent;
+    text-color:                  @foreground;
+}
+element normal.active {
+    background-color:            @background;
+    text-color:                  @active;
+}
+element selected.normal {
+    background-color:            #7aa2f7;
+    text-color:                  @selected;
+}
+element selected.urgent {
+    background-color:            @urgent;
+    text-color:                  @foreground;
+}
+element selected.active {
+    background-color:            @urgent;
+    text-color:                  @active;
+}
+element alternate.normal {
+    background-color:            inherit;
+    text-color:                  inherit;
+}
+element-icon {
+    background-color:            transparent;
+    text-color:                  inherit;
+    size:                        24px;
+    cursor:                      inherit;
+}
+
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}
+
+/*****----- Message -----*****/
+message {
+    background-color:            red;
+    border: none;
+}
+
+textbox {
+    padding:                     12px;
+    border-radius:               100%;
+    background-color:            @background-alt;
+    text-color:                  @foreground;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}
+
+error-message {
+    padding:                     12px;
+    border-radius:               16px;
+    background-color:            @background;
+    text-color:                  @foreground;
+}
+

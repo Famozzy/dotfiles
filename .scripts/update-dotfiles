@@ -1,0 +1,26 @@
+#!/bin/bash
+
+declare -a DOTFILES=(
+  ".zshrc"
+  ".scripts"
+  ".config/kitty"
+  ".config/hypr"
+  ".config/dunst"
+  ".config/cava"
+  ".config/gtk-3.0"
+  ".config/waybar"
+  ".config/Code/User/settings.json"
+  ".config/nvim"
+  ".config/rofi"
+  ".config/fastfetch/config.jsonc"
+)
+
+DOTFILES_PATH="$HOME/Dev/dotfiles"
+
+for f in "${DOTFILES[@]}"; do
+  rm -rf "${DOTFILES_PATH}/${f}"
+  mkdir -p "$(dirname "${DOTFILES_PATH}/${f}")" && cp -r "$HOME/${f}" "${DOTFILES_PATH}/${f}"
+done
+
+yay -Qeqa >"$DOTFILES_PATH/pkglist.txt"
+echo "Dotfiles successfully updated"

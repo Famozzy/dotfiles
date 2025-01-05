@@ -1,0 +1,7 @@
+#!/bin/bash
+
+#TODO:
+# - create rofi theme for powermenu
+# - create the script
+
+notify-send "Powermenu" "todo: create powermenu script"

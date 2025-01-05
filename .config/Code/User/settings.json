@@ -1,0 +1,108 @@
+{
+  "window.menuBarVisibility": "toggle",
+  "editor.fontFamily": "'Jetbrains Mono', 'monospace'",
+  "editor.fontLigatures": true,
+  "editor.minimap.enabled": false,
+  "editor.scrollbar.verticalScrollbarSize": 12,
+  "editor.fontSize": 13,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit"
+  },
+  "editor.tokenColorCustomizations": {
+    "[Tokyo Night]": {
+      "textMateRules": [
+        {
+          "scope": [
+            "comment keyword.codetag.notation",
+            "comment.block.documentation keyword",
+            "comment.block.documentation storage.type.class"
+          ],
+          "settings": {
+            "foreground": "#bb9af7"
+          }
+        },
+        {
+          "scope": ["comment.block.documentation entity.name.type.instance"],
+          "settings": {
+            "foreground": "#73daca",
+            "fontStyle": "italic"
+          }
+        },
+        {
+          "scope": ["comment.block.documentation entity.name.type punctuation.definition.bracket"],
+          "settings": {
+            "foreground": "#bb9af7"
+          }
+        },
+        {
+          "scope": ["comment.block.documentation variable"],
+          "settings": {
+            "foreground": "#e0af68",
+            "fontStyle": "italic"
+          }
+        },
+        {
+          // disable italic
+          "scope": [
+            "comment",
+            "meta.var.expr storage.type",
+            "keyword.control.flow",
+            "keyword.control.return",
+            "meta.directive.vue punctuation.separator.key-value.html",
+            "meta.directive.vue entity.other.attribute-name.html",
+            "tag.decorator.js entity.name.tag.js",
+            "tag.decorator.js punctuation.definition.tag.js",
+            "storage.modifier"
+          ],
+          "settings": {
+            "fontStyle": ""
+          }
+        }
+      ]
+    }
+  },
+  "terminal.integrated.fontFamily": "'Jetbrains Mono', 'monospace'",
+  "security.workspace.trust.untrustedFiles": "newWindow",
+  "security.workspace.trust.startupPrompt": "never",
+  "security.workspace.trust.enabled": false,
+  "workbench.iconTheme": "material-icon-theme",
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": true,
+    "markdown": true,
+    "scminput": false
+  },
+  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.enableMultiLinePasteWarning": "never",
+  "prettier.singleQuote": true,
+  "prettier.printWidth": 120,
+  "telemetry.telemetryLevel": "off",
+  "workbench.colorTheme": "Tokyo Night",
+  "workbench.startupEditor": "none",
+  "explorer.confirmDelete": false,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "vscord.app.name": "Visual Studio Code",
+  "vscord.status.idle.resetElapsedTime": true,
+  "vscord.status.problems.text": "",
+  "vscord.status.details.idle.enabled": false,
+  "[go]": {
+    "editor.tabSize": 4,
+    "editor.defaultFormatter": "golang.go"
+  },
+  "github.copilot.editor.enableAutoCompletions": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "vscord.status.idle.timeout": 600,
+  "vscord.status.details.text.noWorkSpaceText": " no workspace",
+  "vscord.status.buttons.button1.git.active.enabled": false,
+  "window.customTitleBarVisibility": "never",
+  "workbench.activityBar.location": "top",
+  "workbench.editor.enablePreview": false,
+  "prettier.semi": false,
+  "prettier.trailingComma": "none",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "git.confirmSync": false
+}

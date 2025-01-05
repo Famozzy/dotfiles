@@ -1,0 +1,20 @@
+#!/bin/bash
+
+check_battery() {
+	status=$(acpi -b | awk '{print $3}' | tr -d ',')
+	percentage=$(acpi -b | awk '{print $4}' | tr -d '%,')
+
+	if [ $status == "Charging" ]; then
+		dunstctl close
+		return 0
+	fi
+
+	if [ $status == "Discharging" ] && [ $percentage -lt 15 ]; then
+		notify-send -u critical "Battery low" "Plug in your charger" -i $HOME/.config/dunst/icons/battery-warning-vertical.svg
+	fi
+}
+
+while true; do
+	check_battery
+	sleep 60
+done

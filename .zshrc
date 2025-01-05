@@ -1,13 +1,31 @@
+# Add deno completions to search path
+if [[ ":$FPATH:" != *":/home/famozzy/.zsh/completions:"* ]]; then export FPATH="/home/famozzy/.zsh/completions:$FPATH"; fi
 export ZSH="$HOME/.oh-my-zsh"
 
-export XDG_CONFIG_HOME="$HOME/.config"
+export EDITOR="nvim"
 
-export PATH="$HOME/bin:$PATH"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+
+export GOPATH="$XDG_DATA_HOME/go"
+
+export GOBIN="$GOPATH/bin"
+export PATH="$PATH:$GOBIN"
+
+export PATH="$HOME/.scripts:$PATH"
 export PATH="$PATH:$HOME/.spicetify"
 
-export GTK_IM_MODULE="fcitx"
-export QT_IM_MODULE="fcitx"
-export XMODIFIERS="@im=fcitx"
+export GPG_TTY=$(tty)
+
+export JAVA_HOME="/usr/lib/jvm/java-17-openjdk"
+export PATH=$JAVA_HOME/bin:$PATH
+
+export ANDROID_USER_HOME="$HOME/.android"
+export ANDROID_SDK_ROOT="/opt/android-sdk"
+export ANDROID_HOME=$ANDROID_SDK_ROOT
+export PATH=$ANDROID_HOME/platform-tools:$PATH
+export PATH=$ANDROID_HOME/cmdline-tools/latest/bin:$PATH
+
 
 # Path to your oh-my-zsh installation.
 
@@ -77,21 +95,30 @@ ZSH_THEME="avit"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+
 plugins=(
 	zsh-autosuggestions
+  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
+
 
 # User configuration
 
 alias cl="clear"
 alias pacman="sudo pacman"
-alias r="ranger"
 alias py="python3"
-alias lf="lf-ubz"
+alias vim="nvim"
+alias vimf="fd --type f --hidden --exclude .git --exclude node_modules | fzf --preview 'cat {}' | xargs nvim"
 alias exitwm="hyprctl dispatch exit"
-alias mkdir="mkdir -p"
+alias sstat="systemctl status"
+alias g="git"
+alias icat="kitty +kitten icat"
+alias gcs="source /etc/profile.d/google-cloud-cli.sh"
+alias docker="sudo docker"
+alias tf="terraform"
+
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -117,9 +144,7 @@ alias mkdir="mkdir -p"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# pfetch (pretty fetch) configuration
-export PF_INFO="ascii title os kernel pkgs shell uptime memory cpu gpu"
-export PF_ASCII="arch"
+export PF_INFO="ascii title os kernel uptime pkgs shell memory"
 pfetch
 
 # nvm (node version manager)
@@ -134,5 +159,18 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
-#
-#
+
+# bun completions
+[ -s "/home/famozzy/.bun/_bun" ] && source "/home/famozzy/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+source <(fzf --zsh)
+
+# deno
+. "/home/famozzy/.deno/env"
+# Initialize zsh completions (added by deno install script)
+autoload -Uz compinit
+compinit

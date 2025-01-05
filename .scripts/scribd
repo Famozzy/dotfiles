@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# check first argument
+if [ -z "$1" ]; then
+	echo "Usage: scribd <scribd_id>"
+	exit 1
+fi
+
+if [ -z "$BROWSER" ]; then
+	BROWSER="firefox"
+fi
+
+$BROWSER "https://www.scribd.com/embeds/$1/content?start_page=1&view_mode=scroll"
