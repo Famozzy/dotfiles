@@ -78,17 +78,12 @@
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.enableMultiLinePasteWarning": "never",
-  "prettier.singleQuote": true,
-  "prettier.printWidth": 120,
   "telemetry.telemetryLevel": "off",
   "workbench.colorTheme": "Tokyo Night",
   "workbench.startupEditor": "none",
   "explorer.confirmDelete": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "vscord.app.name": "Visual Studio Code",
-  "vscord.status.idle.resetElapsedTime": true,
-  "vscord.status.problems.text": "",
-  "vscord.status.details.idle.enabled": false,
+
   "[go]": {
     "editor.tabSize": 4,
     "editor.defaultFormatter": "golang.go"
@@ -96,13 +91,27 @@
   "github.copilot.editor.enableAutoCompletions": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "vscord.status.idle.timeout": 600,
-  "vscord.status.details.text.noWorkSpaceText": " no workspace",
+  "vscord.status.details.text.noWorkSpaceText": "no workspace",
   "vscord.status.buttons.button1.git.active.enabled": false,
+  "vscord.app.name": "Visual Studio Code",
+  "vscord.status.idle.resetElapsedTime": true,
+  "vscord.status.problems.text": "",
+  "vscord.status.details.idle.enabled": false,
   "window.customTitleBarVisibility": "never",
   "workbench.activityBar.location": "top",
   "workbench.editor.enablePreview": false,
+  "prettier.singleQuote": true,
+  "prettier.printWidth": 120,
   "prettier.semi": false,
   "prettier.trailingComma": "none",
   "diffEditor.ignoreTrimWhitespace": false,
-  "git.confirmSync": false
+  "git.confirmSync": false,
+  "[typst]": {
+    "editor.formatOnSave": true,
+    "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?"
+  },
+  "tinymist.formatterMode": "typstyle",
+  "[typst-code]": {
+    "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?"
+  }
 }

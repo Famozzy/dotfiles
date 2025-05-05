@@ -1,13 +1,14 @@
 #!/bin/bash
 
-# get the current volume
-volume=$(pactl list sinks | grep -m 1 'Volume: front-left:' | awk '{print $5}' | sed 's/%//g')
+jq_del='del(.[] | select(.["description"] == "Loopback Analog Stereo"))'
+jq_get_vol='.[].volume.["front-left"].["value_percent"]'
 
-echo $volume
+volume=$(pactl -f json list sinks | jq "$jq_del" | jq "$jq_get_vol" | sed 's/["%]//g')
+
 if [ "$1" = "up" ] && [ "$volume" -lt 100 ]; then
-	pactl set-sink-volume @DEFAULT_SINK@ +2%
+  pactl set-sink-volume @DEFAULT_SINK@ +2%
 elif [ "$1" = "down" ]; then
-	pactl set-sink-volume @DEFAULT_SINK@ -2%
+  pactl set-sink-volume @DEFAULT_SINK@ -2%
 elif [ "$1" = "mute" ]; then
-	pactl set-sink-mute @DEFAULT_SINK@ toggle
+  pactl set-sink-mute @DEFAULT_SINK@ toggle
 fi

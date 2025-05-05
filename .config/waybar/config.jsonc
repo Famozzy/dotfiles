@@ -88,7 +88,7 @@
   "cpu": {
     "format": " {usage}%",
     "interval": 10,
-    "tooltip": " {usagePerCore}",
+    "tooltip": "{usagePerCore}",
   },
   "memory": {
     "format": " {used:0.1f}G",
@@ -112,7 +112,7 @@
     "states": {
       "good": 80,
       "warning": 30,
-      "critical": 15,
+      "critical": 20,
     },
     "format": "{icon} {capacity}%",
     "format-charging": "󱊥 {capacity}%",
@@ -139,7 +139,7 @@
       "headset": "󰋋",
       "default": ["󰕿", "󰖀", "󰕾"],
     },
-    "on-click": "$HOME/bin/volume mute",
+    "on-click": "$HOME/.scripts/volume mute",
   },
   //"custom/powermenu": {
   //  "format": "󰤆",

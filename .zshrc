@@ -26,6 +26,8 @@ export ANDROID_HOME=$ANDROID_SDK_ROOT
 export PATH=$ANDROID_HOME/platform-tools:$PATH
 export PATH=$ANDROID_HOME/cmdline-tools/latest/bin:$PATH
 
+export PODMAN_COMPOSE_WARNING_LOGS=false
+export PODMAN_COMPOSE_PROVIDER=podman-compose
 
 # Path to your oh-my-zsh installation.
 
