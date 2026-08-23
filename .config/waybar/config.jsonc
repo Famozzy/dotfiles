@@ -11,9 +11,11 @@
     "cpu",
     "memory",
     "idle_inhibitor",
-    "hyprland/window",
+    "power-profiles-daemon",
+    "mango/layout",
+    "mango/window",
   ],
-  "modules-center": ["hyprland/workspaces"],
+  "modules-center": ["mango/workspaces"],
   "modules-right": [
     "tray",
     "network",
@@ -22,28 +24,32 @@
     "battery",
     "clock",
   ],
-  "hyprland/workspaces": {
-    "disable-scroll": true,
-    "all-outputs": true,
-    "warp-on-scroll": false,
+  "mango/workspaces": {
     "format": "{icon}",
-    "format-icons": {
-      "1": "一",
-      "2": "二",
-      "3": "三",
-      "4": "四",
-      "5": "五",
-      "6": "六",
-      "7": "七",
-      "8": "八",
-      "9": "九",
-      "10": "十",
-    },
+    "hide-empty": true,
+    "on-click": "activate",
+    "on-click-right": "toggle",
+    "overview-label": "OVERVIEW",
   },
-  "hyprland/window": {
+  "mango/window": {
     "format": "{}",
-    "max-length": 36,
+    "max-length": 52,
   },
+  "mango/layout": {
+    "format": "{} ",
+    "format-S": "[S]",
+    "format-T": "[T]",
+  },
+  // "hyprland/workspaces": {
+  //   "disable-scroll": true,
+  //   "all-outputs": true,
+  //   "warp-on-scroll": false,
+  //   "format": "{icon}",
+  // },
+  // "hyprland/window": {
+  //   "format": "{}",
+  //   "max-length": 52,
+  // },
   // "mpd": {
   //     "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
   //     "format-disconnected": "Disconnected ",
@@ -70,6 +76,17 @@
   //     "tooltip-format": "MPD (connected)",
   //     "tooltip-format-disconnected": "MPD (disconnected)"
   // },
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "{profile} mode",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": "",
+    },
+  },
   "idle_inhibitor": {
     "format": "{icon}",
     "format-icons": {
@@ -84,6 +101,16 @@
   "clock": {
     "timezone": "Asia/Makassar",
     "format": "{:%a %d %b %H:%M}",
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "calendar": {
+      "mode": "month",
+      "format": {
+        "months": "<span><b>{}</b></span>",
+        "days": "<span>{}</span>",
+        "weekdays": "<span><b>{}</b></span>",
+        "today": "<span><b><u>{}</u></b></span>",
+      },
+    },
   },
   "cpu": {
     "format": " {usage}%",
@@ -95,13 +122,13 @@
     "tooltip-format": "{used:0.1f}G/{total:0.1f}G",
     "interval": 10,
   },
-  "temperature": {
-    "critical-threshold": 80,
-    "format-critical": "{icon} {temperatureC}°C",
-    "format": "{icon} {temperatureC}°C",
-    "format-icons": ["", "", ""],
-    "tooltip": false,
-  },
+  // "temperature": {
+  //   "critical-threshold": 80,
+  //   "format-critical": "{icon} {temperatureC}°C",
+  //   "format": "{icon} {temperatureC}°C",
+  //   "format-icons": ["", "", ""],
+  //   "tooltip": false,
+  // },
   "backlight": {
     "format": "{icon} {percent}%",
     "format-icons": ["󰃞", "󰃝", "󰃟", "󰃠"],
@@ -141,11 +168,11 @@
     },
     "on-click": "$HOME/.scripts/volume mute",
   },
-  //"custom/powermenu": {
-  //  "format": "󰤆",
-  //  "tooltip": false,
-  //  "on-click": "sleep 0.1 && $HOME/bin/powermenu",
-  //},
+  "custom/powermenu": {
+    "format": "󰤆",
+    "tooltip": false,
+    "on-click": "sleep 0.1 && $HOME/.scripts/powermenu",
+  },
   "custom/logo": {
     "format": "",
     "tooltip": false,

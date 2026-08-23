@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+set -euo pipefail
+mkdir -p "$HOME/Pictures/Screenshots"
+filepath="$HOME/Pictures/Screenshots/$(date +%Y%m%d%H%M%S).png"
+
+case "${1:-fullscreen}" in
+  window)
+    g=$(mmsg get focusing-client | jq -r '"\(.x),\(.y) \(.width)x\(.height)"')
+    [ -z "$g" ] && exit 1
+    grim -g "$g" "$filepath"
+    notify-send "Screenshot" "Window saved to Screenshots" -i "$filepath" ;;
+  
+  region)
+    g=$(slurp -d); [ -z "$g" ] && exit 1
+    grim -g "$g" - | wl-copy
+    notify-send "Screenshot" "Region copied to clipboard" ;;
+    
+  *) 
+    grim "$filepath"
+    notify-send "Screenshot" "Full screen saved to Screenshots" -i "$filepath" ;;
+esac

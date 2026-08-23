@@ -1,5 +1,5 @@
 # Add deno completions to search path
-if [[ ":$FPATH:" != *":/home/famozzy/.zsh/completions:"* ]]; then export FPATH="/home/famozzy/.zsh/completions:$FPATH"; fi
+if [[ ":$FPATH:" != *":$HOME/.zsh/completions:"* ]]; then export FPATH="$HOME/.zsh/completions:$FPATH"; fi
 export ZSH="$HOME/.oh-my-zsh"
 
 export EDITOR="nvim"
@@ -17,7 +17,7 @@ export PATH="$PATH:$HOME/.spicetify"
 
 export GPG_TTY=$(tty)
 
-export JAVA_HOME="/usr/lib/jvm/java-17-openjdk"
+export JAVA_HOME="/usr/lib/jvm/java-22-openjdk"
 export PATH=$JAVA_HOME/bin:$PATH
 
 export ANDROID_USER_HOME="$HOME/.android"
@@ -107,20 +107,14 @@ source $ZSH/oh-my-zsh.sh
 
 
 # User configuration
-
-alias cl="clear"
 alias pacman="sudo pacman"
 alias py="python3"
 alias vim="nvim"
-alias vimf="fd --type f --hidden --exclude .git --exclude node_modules | fzf --preview 'cat {}' | xargs nvim"
-alias exitwm="hyprctl dispatch exit"
-alias sstat="systemctl status"
+alias k="kubectl"
 alias g="git"
+alias sstat="systemctl status"
 alias icat="kitty +kitten icat"
-alias gcs="source /etc/profile.d/google-cloud-cli.sh"
 alias docker="sudo docker"
-alias tf="terraform"
-
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -146,16 +140,16 @@ alias tf="terraform"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export PF_INFO="ascii title os kernel uptime pkgs shell memory"
-pfetch
-
+# export PF_INFO="ascii title os kernel uptime pkgs shell memory"
+# pfetch
+#
 # nvm (node version manager)
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # pnpm
-export PNPM_HOME="/home/famozzy/.local/share/pnpm"
+export PNPM_HOME="$HOME/.local/share/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
@@ -163,16 +157,12 @@ esac
 # pnpm end
 
 # bun completions
-[ -s "/home/famozzy/.bun/_bun" ] && source "/home/famozzy/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
+fastfetch
 source <(fzf --zsh)
 
-# deno
-. "/home/famozzy/.deno/env"
-# Initialize zsh completions (added by deno install script)
-autoload -Uz compinit
-compinit

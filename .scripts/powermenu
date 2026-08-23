@@ -1,7 +1,13 @@
 #!/bin/bash
 
-#TODO:
-# - create rofi theme for powermenu
-# - create the script
+menu="[lock]\n[suspend]\n[reboot]\n[poweroff]"
 
-notify-send "Powermenu" "todo: create powermenu script"
+choice=$(printf "$menu" | rofi -dmenu -i -theme "$HOME/.config/rofi/themes/powermenu.rasi" -p " ")
+
+case "$choice" in
+\[lock\]) loginctl lock-session ;;
+\[suspend\]) systemctl suspend ;;
+\[rebbot\]) systemctl reboot ;;
+\[poweroff\]) systemctl poweroff ;;
+*) exit 0 ;;
+esac

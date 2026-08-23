@@ -1,0 +1,128 @@
+configuration {
+  modi:           "dmenu";
+  show-icons:     false;
+  disable-history: true;
+  hide-scrollbar: true;
+  max-history-size: 0;
+}
+
+* {
+  font: "JetBrains Mono 12";
+
+  bg0     : #1a1b26;
+  bg1     : #1f2335;
+  bg2     : #24283b;
+  bg3     : #414868;
+  fg0     : #c0caf5;
+  fg1     : #a9b1d6;
+  fg2     : #737aa2;
+  red     : #f7768e;
+  green   : #9ece6a;
+  yellow  : #e0af68;
+  blue    : #7aa2f7;
+  magenta : #9a7ecc;
+  cyan    : #4abaaf;
+}
+
+window {
+  location          : center;
+  anchor            : center;
+  width             : 340px;
+  border-radius     : 12px;
+  border            : 1px;
+  border-color      : @bg3;
+  background-color  : @bg1;
+  transparency      : "real";
+  cursor            : "default";
+}
+
+mainbox {
+  enabled           : true;
+  spacing           : 0px;
+  padding           : 0px;
+  background-color  : transparent;
+  orientation       : vertical;
+  children          : [ "listbox" ];
+}
+
+listbox {
+  enabled           : true;
+  spacing           : 0px;
+  padding           : 12px;
+  background-color  : transparent;
+  orientation       : vertical;
+  children          : [ "listview" ];
+}
+
+listview {
+  border            : none;
+  enabled           : true;
+  columns           : 2;
+  lines             : 2;
+  cycle             : true;
+  dynamic           : true;
+  scrollbar         : false;
+  reverse           : false;
+  fixed-height      : true;
+  fixed-columns     : true;
+  spacing           : 10px;
+  background-color  : transparent;
+  text-color        : @fg0;
+  cursor            : "default";
+}
+
+element {
+  enabled           : true;
+  spacing           : 8px;
+  padding           : 14px 0px;
+  border-radius     : 10px;
+  background-color  : @bg2;
+  text-color        : @fg0;
+  cursor            : "pointer";
+  orientation       : vertical;
+}
+
+element-icon {
+  background-color  : transparent;
+  text-color        : inherit;
+  size              : 1.4em;
+  cursor            : inherit;
+}
+
+element-text {
+  background-color  : transparent;
+  text-color        : inherit;
+  cursor            : inherit;
+  vertical-align    : 0.5;
+  horizontal-align  : 0.5;
+}
+
+element normal.normal {
+  background-color  : @bg2;
+  text-color        : @fg0;
+}
+
+element selected.normal {
+  background-color  : @blue;
+  text-color        : @bg1;
+}
+
+element normal.urgent {
+  background-color  : @bg2;
+  text-color        : @red;
+}
+
+element selected.urgent {
+  background-color  : @red;
+  text-color        : @bg1;
+}
+
+element normal.active {
+  background-color  : @bg2;
+  text-color        : @yellow;
+}
+
+element selected.active {
+  background-color  : @yellow;
+  text-color        : @bg1;
+}

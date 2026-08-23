@@ -5,7 +5,7 @@ currentWall="$HOME/.current-wall"
 wall=$(ls $wallsDir | rofi -dmenu -i -p "Wallpaper" -theme-str 'element-icon { enabled: false; }')
 
 if [ -n "$wall" ]; then
-  swww img --transition-type wipe --transition-angle 50 "$wallsDir/$wall"
+  awww img --transition-type wipe --transition-angle 50 "$wallsDir/$wall"
 
   if [ "$wallsDir/$wall" = $(cat $currentWall) ]; then
     notify-send -u normal "wall-changer" "$wall is already set as wallpaper" -i "$wallsDir/$wall"

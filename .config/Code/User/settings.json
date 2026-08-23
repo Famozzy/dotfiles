@@ -1,15 +1,15 @@
 {
-  "window.menuBarVisibility": "toggle",
   "editor.fontFamily": "'Jetbrains Mono', 'monospace'",
   "editor.fontLigatures": true,
   "editor.minimap.enabled": false,
-  "editor.scrollbar.verticalScrollbarSize": 12,
-  "editor.fontSize": 13,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.scrollbar.verticalScrollbarSize": 11,
+  "editor.fontSize": 11,
+  "terminal.integrated.fontSize": 12,
+  "editor.defaultFormatter": "biomejs.biome",
   "editor.tabSize": 2,
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.organizeImports": "explicit"
+    "source.biome": "explicit"
   },
   "editor.tokenColorCustomizations": {
     "[Tokyo Night]": {
@@ -32,7 +32,9 @@
           }
         },
         {
-          "scope": ["comment.block.documentation entity.name.type punctuation.definition.bracket"],
+          "scope": [
+            "comment.block.documentation entity.name.type punctuation.definition.bracket"
+          ],
           "settings": {
             "foreground": "#bb9af7"
           }
@@ -73,23 +75,21 @@
     "*": true,
     "plaintext": true,
     "markdown": true,
-    "scminput": false
+    "scminput": false,
+    "typescript": true,
+    "typescriptreact": true
   },
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.enableMultiLinePasteWarning": "never",
   "telemetry.telemetryLevel": "off",
-  "workbench.colorTheme": "Tokyo Night",
   "workbench.startupEditor": "none",
   "explorer.confirmDelete": false,
-  "typescript.updateImportsOnFileMove.enabled": "always",
-
   "[go]": {
     "editor.tabSize": 4,
     "editor.defaultFormatter": "golang.go"
   },
   "github.copilot.editor.enableAutoCompletions": true,
-  "javascript.updateImportsOnFileMove.enabled": "always",
   "vscord.status.idle.timeout": 600,
   "vscord.status.details.text.noWorkSpaceText": "no workspace",
   "vscord.status.buttons.button1.git.active.enabled": false,
@@ -108,10 +108,44 @@
   "git.confirmSync": false,
   "[typst]": {
     "editor.formatOnSave": true,
-    "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?"
+    "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?",
+    "editor.defaultFormatter": "myriad-dreamin.tinymist"
   },
   "tinymist.formatterMode": "typstyle",
   "[typst-code]": {
     "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?"
+  },
+  "github.copilot.nextEditSuggestions.enabled": false,
+  "git.openRepositoryInParentFolders": "always",
+  "remote.portsAttributes": {
+    "3000": {
+      "protocol": "https"
+    }
+  },
+  "containers.containerClient": "com.microsoft.visualstudio.containers.docker",
+  "containers.orchestratorClient": "com.microsoft.visualstudio.orchestrators.dockercompose",
+  "remote.SSH.useExecServer": false,
+  "python.createEnvironment.trigger": "off",
+  "json.schemaDownload.trustedDomains": {
+    "https://schemastore.azurewebsites.net/": true,
+    "https://raw.githubusercontent.com/": true,
+    "https://www.schemastore.org/": true,
+    "https://json.schemastore.org/": true,
+    "https://json-schema.org/": true,
+    "https://biomejs.dev": true
+  },
+  "chat.useNestedAgentsMdFiles": true,
+  "chat.mcp.gallery.enabled": true,
+  "window.menuBarVisibility": "compact",
+  "chat.tips.enabled": false,
+  "biome.requireConfiguration": true,
+  "terminal.integrated.stickyScroll.enabled": false,
+  "js/ts.suggest.includeCompletionsForImportStatements": false,
+  "github.copilot.nextEditSuggestions.eagerness": "high",
+  "js/ts.updateImportsOnFileMove.enabled": "never",
+  "chat.viewSessions.orientation": "stacked",
+  "workbench.colorTheme": "Tokyo Night Dark",
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
   }
 }

@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+PID_FILE="/tmp/lid_inhibitor.pid"
+
+if [ -f "$PID_FILE" ] && kill -0 "$(cat "$PID_FILE")" 2>/dev/null; then
+    # Inhibitor is running -> kill it to RE-ENABLE sleep on lid close
+    kill "$(cat "$PID_FILE")"
+    rm -f "$PID_FILE"
+    echo "Lid action ACTIVE (Laptop will sleep when closed)."
+    notify-send -u low "Lid Action" "Laptop will now SLEEP on lid close." 2>/dev/null
+else
+    # Inhibitor is not running -> start it to DISABLE sleep on lid close
+    systemd-inhibit --what=handle-lid-switch --who="LidToggleScript" --why="User requested stay awake" sleep infinity &
+    echo $! > "$PID_FILE"
+    echo "Lid action INHIBITED (Laptop stays awake when closed)."
+    notify-send -u low "Lid Action" "Laptop stays AWAKE on lid close." 2>/dev/null
+fi
