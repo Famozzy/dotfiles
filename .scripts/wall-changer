@@ -2,7 +2,9 @@
 
 wallsDir="$HOME/Pictures/walls"
 currentWall="$HOME/.current-wall"
-wall=$(ls $wallsDir | rofi -dmenu -i -p "Wallpaper" -theme-str 'element-icon { enabled: false; }')
+wall=$(for file in "$wallsDir"/*; do
+  [ -f "$file" ] && echo -e "$(basename "$file")\0icon\x1f$file"
+done | rofi -dmenu -i -p "Wallpaper" -theme "$HOME/.config/rofi/themes/wall-changer.rasi")
 
 if [ -n "$wall" ]; then
   awww img --transition-type wipe --transition-angle 50 "$wallsDir/$wall"

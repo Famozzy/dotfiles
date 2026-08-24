@@ -1,5 +1,49 @@
-@impoer "config.rasi"
+@import "config.rasi"
 
 configuration {
-  show-icons: false;
+  show-icons: true;
+}
+
+window {
+  width: 75%;
+}
+
+entry {
+  expand: true;
+  placeholder: "Type to filter";
+}
+
+dummy {
+  expand: false;
+}
+
+listbox {
+  orientation: horizontal;
+  children: [ dummy, listview, dummy ];
+}
+
+listview {
+  expand: true;
+  columns: 1;
+  lines: 6;
+  layout: horizontal;
+  flow: horizontal;
+}
+
+element {
+  expand: true;
+  orientation: vertical;
+  spacing: 4px;
+  children: [ element-icon, element-text ];
+}
+
+element-icon {
+  enabled: true;
+  size: 200px;
+  squared: false;
+}
+
+element-text {
+  vertical-align: 0.5;
+  horizontal-align: 0.5;
 }
