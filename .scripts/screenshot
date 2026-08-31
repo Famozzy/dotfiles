@@ -16,6 +16,7 @@ case "${1:-fullscreen}" in
     notify-send "Screenshot" "Region copied to clipboard" ;;
     
   *) 
-    grim "$filepath"
+    mon=$(mmsg get all-monitors | jq -r '.monitors[] | select(.active) | .name')
+    grim -o "$mon" "$filepath"
     notify-send "Screenshot" "Full screen saved to Screenshots" -i "$filepath" ;;
 esac
