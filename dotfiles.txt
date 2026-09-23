@@ -3,6 +3,7 @@
 .config/kitty
 .config/hypr
 .config/mango
+.config/mako
 .config/dunst
 .config/gtk-3.0
 .config/waybar

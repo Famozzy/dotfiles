@@ -63,7 +63,6 @@ dosfstools
 downgrade
 dracut
 duf
-dunst
 dust
 e2fsprogs
 efibootmgr
@@ -163,6 +162,7 @@ lsscsi
 lutgen-bin
 lvm2
 ly
+mako
 man-db
 man-pages
 mangowm
